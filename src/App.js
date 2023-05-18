@@ -1,23 +1,27 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import AddNewTask from './components/AddNewTask';
+import TaskListContainer from './components/TaskListContainer';
+import AppHeader from './components/AppHeader';
 
 function App() {
+  const [taskList, setTaskList] = useState([]);
+  
+  const onAddNewTask = (taskInfo) => {
+    setTaskList( arr => [...arr, taskInfo]);
+  };
+
+  const onDeleteTask = (index) => {
+    var dummyTaskList = [...taskList];
+    dummyTaskList.splice(index, 1);
+    setTaskList(dummyTaskList);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <AppHeader />
+      <AddNewTask onAddNewTask={onAddNewTask}/>
+      <TaskListContainer taskList={taskList} onDeleteTask={onDeleteTask} />
     </div>
   );
 }

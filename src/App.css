@@ -2,20 +2,9 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  min-height: 10vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -24,15 +13,58 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.AddNewTask {
+  background-color: #616875;
+  min-height: 10vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.AddNewTaskInput {
+  width: 600px;
+  margin-bottom: 10px;
+  height: 30px;
+}
+
+.AddNewTaskButton {
+  background-color: #53555a;
+  height: 30px;
+  color: white;
+}
+
+.TaskListContainer {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.TaskItem {
+  display: flex;
+  flex-direction: row;
+}
+
+.TaskItemInput {
+  width: 1500px;
+  display: grid;
+  grid-template-columns: 5em auto;
+  gap: 0.5em;
+
+}
+
+.TaskItemLabel {
+  display: grid;
+  justify-content:left;
+}
+
+.TaskItemButton {
+  background-color: rgb(119, 119, 127);
+  height: 30px;
+  color: white;
 }
