@@ -21,6 +21,7 @@ export default function TaskListContainer({ taskList, onDeleteTask }) {
   return (
     <div className='TaskListContainer'>
       <h1>Your task list</h1>
+      {taskList.length === 0 && <div>You don't have any task in your to-do list.</div>}
       <div>{taskListJsx}</div>
     </div>
   )
